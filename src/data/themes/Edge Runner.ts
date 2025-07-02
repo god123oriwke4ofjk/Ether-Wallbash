@@ -1,0 +1,18 @@
+export default {
+  theme: {
+    "bg color": "#000000",
+    "fg color": "#FDF500",
+    "main accent": "#87E3F7",
+    "accent 1": "#a7c080",
+    "accent 2": "#c22920",
+    "accent 3": "#7fbbb3",
+    "accent 4": "#DA9DED",
+    "accent 5": "#CAA499",
+    "panel opacity": 0.5,
+  },
+  image: {
+    image: `url(${import.meta.env.BASE_URL}cyberpunk.jpg)`,
+    "position x": "50%",
+    "position y": "50%",
+  },
+};
