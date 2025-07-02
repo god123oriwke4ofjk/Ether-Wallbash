@@ -34,7 +34,7 @@ Frosted Glass
 ![Ether - Frosted Glass Theme](https://i.postimg.cc/jdsX3PGz/250702-20h42m16s-screenshot.png)
 
 Crimson Blue
-![Ether - Crimson Blue Theme](https://i.postimg.cc/SxPfK5jr/250702-20h42m32s-screenshot.png)
+![Ether - Crimson Blue Theme](https://i.postimg.cc/JzmjzkNp/250702-21h15m25s-screenshot.png)
 
 Decay Green
 ![Ether - Decay Green Theme](https://i.postimg.cc/CKfHnNqV/250702-20h42m48s-screenshot.png)
