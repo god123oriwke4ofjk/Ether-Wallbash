@@ -15,20 +15,45 @@ Swap out the colors or the image if they're not to your liking. Here are some pr
 Everforest dark
 ![Ether - Everforest dark theme](https://i.postimg.cc/jjggsXtx/everforest-dark.jpg)
 
-Catppuccin
-![Ether - Catppuccin theme](https://i.postimg.cc/zGNPpvxr/catppuccin.jpg)
+Tokyo Night
+![Ether - Tokyo Night theme](https://i.postimg.cc/zGNPpvxr/catppuccin.jpg)
 
 Dracula
 ![Ether - Dracula theme](https://i.postimg.cc/q7MDVYfD/dracula.jpg)
 
-Gruvbox
-![Ether - Gruvbox theme](https://i.postimg.cc/bJZ6dtwQ/gruvbox.jpg)
+Gruvbox Retro
+![Ether - Gruvbox Retro theme](https://i.postimg.cc/bJZ6dtwQ/gruvbox.jpg)
 
-Nord
-![Ether - Nord theme](https://i.postimg.cc/kgyYHCHt/nord.jpg)
+Eternal Arctic
+![Ether - Eternal Arctic theme](https://i.postimg.cc/kgyYHCHt/nord.jpg)
 
-B&W
-![Ether - B&W theme](https://i.postimg.cc/28hK4hFG/b-w.jpg)
+Vanta Black
+![Ether - Vanta Black theme](https://i.postimg.cc/28hK4hFG/b-w.jpg)
+
+Frosted Glass
+![Ether - Frosted Glass Theme](https://i.postimg.cc/jdsX3PGz/250702-20h42m16s-screenshot.png)
+
+Crimson Blue
+![Ether - Crimson Blue Theme](https://i.postimg.cc/SxPfK5jr/250702-20h42m32s-screenshot.png)
+
+Decay Green
+![Ether - Decay Green Theme](https://i.postimg.cc/CKfHnNqV/250702-20h42m48s-screenshot.png)
+
+Edge Runner
+![Ether - Edge Runner Theme](https://i.postimg.cc/nhr1pZVr/250702-20h43m02s-screenshot.png)
+
+Graphite Mono
+![Ether - Graphite Mono Theme](https://i.postimg.cc/J4PQftLS/250702-20h43m20s-screenshot.png)
+
+Material Sakura
+![Ether - Material Sakura Theme](https://i.postimg.cc/QCjpPZnX/250702-20h43m34s-screenshot.png)
+
+One Dark
+![Ether - One Dark Theme](https://i.postimg.cc/gJFyVZVL/250702-20h43m47s-screenshot.png)
+
+Synth Wave
+![Ether - Synth Wave Theme](https://i.postimg.cc/FzGjXC20/250702-20h44m01s-screenshot.png)
+
 
 ## Configuration Options
 
