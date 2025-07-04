@@ -31,28 +31,34 @@ Vanta Black
 ![Ether - Vanta Black theme](https://i.postimg.cc/28hK4hFG/b-w.jpg)
 
 Frosted Glass
-![Ether - Frosted Glass Theme](https://i.postimg.cc/jdsX3PGz/250702-20h42m16s-screenshot.png)
+![Ether - Frosted Glass Theme](https://i.postimg.cc/HL7K1sy4/250704-16h38m32s-screenshot.png)
 
 Crimson Blue
-![Ether - Crimson Blue Theme](https://i.postimg.cc/JzmjzkNp/250702-21h15m25s-screenshot.png)
+![Ether - Crimson Blue Theme](https://i.postimg.cc/0y434Jby/250704-16h38m06s-screenshot.png)
 
 Decay Green
-![Ether - Decay Green Theme](https://i.postimg.cc/CKfHnNqV/250702-20h42m48s-screenshot.png)
+![Ether - Decay Green Theme](https://i.postimg.cc/2SyMTxjt/250704-16h37m43s-screenshot.png)
 
 Edge Runner
-![Ether - Edge Runner Theme](https://i.postimg.cc/nhr1pZVr/250702-20h43m02s-screenshot.png)
+![Ether - Edge Runner Theme](https://i.postimg.cc/282g4tYv/250704-16h37m16s-screenshot.png)
 
 Graphite Mono
 ![Ether - Graphite Mono Theme](https://i.postimg.cc/J4PQftLS/250702-20h43m20s-screenshot.png)
 
 Material Sakura
-![Ether - Material Sakura Theme](https://i.postimg.cc/QCjpPZnX/250702-20h43m34s-screenshot.png)
+![Ether - Material Sakura Theme](https://i.postimg.cc/28zPLDsr/250704-16h36m52s-screenshot.png)
 
 One Dark
-![Ether - One Dark Theme](https://i.postimg.cc/gJFyVZVL/250702-20h43m47s-screenshot.png)
+![Ether - One Dark Theme](https://i.postimg.cc/XNKRvJDs/250704-16h36m18s-screenshot.png)
 
 Synth Wave
-![Ether - Synth Wave Theme](https://i.postimg.cc/FzGjXC20/250702-20h44m01s-screenshot.png)
+![Ether - Synth Wave Theme](https://i.postimg.cc/nr1gSRQy/250704-16h35m44s-screenshot.png)
+
+Oxo Carbon
+![Ether - Oxo Carbon Theme](https://i.postimg.cc/Pxs7XsbG/250704-16h39m11s-screenshot.png)
+
+Obsidian Purple
+![Ether - Obsidian Purple Theme](https://i.postimg.cc/zBCc3tpy/250704-16h39m40s-screenshot.png)
 
 
 ## Configuration Options
