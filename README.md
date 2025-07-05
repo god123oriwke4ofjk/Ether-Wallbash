@@ -10,6 +10,8 @@ It's not mobile friendly as it was designed for use on a laptop/desktop.
 
 ## Pre-configured themes
 
+[🔽 Skip to configuration](#after-images)
+
 Swap out the colors or the image if they're not to your liking. Here are some pre-configured themes to get you started.
 
 Everforest Dark
@@ -77,6 +79,10 @@ Virtual Witches
 
 BlueSky
 ![Ether - BlueSky Theme](https://i.postimg.cc/BQWKfJRq/250705-20h41m52s-screenshot.png)
+
+<p id="after-images"></p>
+
+[🔼 Back to top](#ether---an-aesthetic-functional-startpage)
 
 
 ## Configuration Options
