@@ -12,8 +12,8 @@ It's not mobile friendly as it was designed for use on a laptop/desktop.
 
 Swap out the colors or the image if they're not to your liking. Here are some pre-configured themes to get you started.
 
-Everforest dark
-![Ether - Everforest dark theme](https://i.postimg.cc/jjggsXtx/everforest-dark.jpg)
+Everforest Dark
+![Ether - Everforest Dark theme](https://i.postimg.cc/jjggsXtx/everforest-dark.jpg)
 
 Tokyo Night
 ![Ether - Tokyo Night theme](https://i.postimg.cc/zGNPpvxr/catppuccin.jpg)
@@ -43,7 +43,7 @@ Edge Runner
 ![Ether - Edge Runner Theme](https://i.postimg.cc/282g4tYv/250704-16h37m16s-screenshot.png)
 
 Graphite Mono
-![Ether - Graphite Mono Theme](https://i.postimg.cc/J4PQftLS/250702-20h43m20s-screenshot.png)
+![Ether - Graphite Mono Theme](https://i.postimg.cc/rmWPn8vD/graphite-mono.png)
 
 Material Sakura
 ![Ether - Material Sakura Theme](https://i.postimg.cc/28zPLDsr/250704-16h36m52s-screenshot.png)
@@ -60,13 +60,31 @@ Oxo Carbon
 Obsidian Purple
 ![Ether - Obsidian Purple Theme](https://i.postimg.cc/zBCc3tpy/250704-16h39m40s-screenshot.png)
 
+Catppuccin Mocha
+![Ether - Catppuccin Mocha Theme](https://i.postimg.cc/8kRYLzR3/mocha.png)
+
+Catppuccin Latte
+![Ether - Catppuccin Latte Theme](https://i.postimg.cc/ZnSDXGSV/latte.png)
+
+Nordic Blue
+![Ether - Nordic Blue Theme](https://i.postimg.cc/gjHBpgcd/nord.png)
+
+Rosé Pine
+![Ether - Rosé Pine Theme](https://i.postimg.cc/SKc6HJxb/250705-20h38m38s-screenshot.png)
+
+Virtual Witches
+![Ether - Virtual Witches Theme](https://i.postimg.cc/8PT04gwC/virtual.png)
+
+BlueSky
+![Ether - BlueSky Theme](https://i.postimg.cc/BQWKfJRq/250705-20h41m52s-screenshot.png)
+
 
 ## Configuration Options
 
 - colors
 - links
 - keybinds
-- image
+- image (gif can also work)
   - image position (if your image is cropped, this sets where the image crop happens)
 - search engine (google, ddg, + 1 custom search engine)
   - to enter a custom search engine, you need to find the query url for the search engine eg. for google it is https://www.google.com/search
