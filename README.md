@@ -57,7 +57,7 @@ Synth Wave
 ![Ether - Synth Wave Theme](https://i.postimg.cc/nr1gSRQy/250704-16h35m44s-screenshot.png)
 
 Oxo Carbon
-![Ether - Oxo Carbon Theme](https://i.postimg.cc/Pxs7XsbG/250704-16h39m11s-screenshot.png)
+![Ether - Oxo Carbon Theme](https://i.postimg.cc/wjMYNG9r/250707-00h22m33s-screenshot.png)
 
 Obsidian Purple
 ![Ether - Obsidian Purple Theme](https://i.postimg.cc/zBCc3tpy/250704-16h39m40s-screenshot.png)
@@ -72,7 +72,7 @@ Nordic Blue
 ![Ether - Nordic Blue Theme](https://i.postimg.cc/gjHBpgcd/nord.png)
 
 Rosé Pine
-![Ether - Rosé Pine Theme](https://i.postimg.cc/SKc6HJxb/250705-20h38m38s-screenshot.png)
+![Ether - Rosé Pine Theme](https://i.postimg.cc/TwrzG8cK/250707-00h22m51s-screenshot.png)
 
 Virtual Witches
 ![Ether - Virtual Witches Theme](https://i.postimg.cc/8PT04gwC/virtual.png)
