@@ -1,92 +1,58 @@
 # Ether - an aesthetic, functional startpage
-
 Navigate to your favorite sites with just a keypress or start a search with the `Shift` key. To navigate to a site, hit the `Ctrl` key before typing the address.
-
 Tab through your links with either the `Tab` key or your arrow keys.
-
 It's not mobile friendly as it was designed for use on a laptop/desktop.
-
 [Live Demo](https://nksupermarket.github.io/Ether/)
-
 ## Pre-configured themes
-
 [🔽 Skip to configuration](#after-images)
-
 Swap out the colors or the image if they're not to your liking. Here are some pre-configured themes to get you started.
-
 Everforest Dark
 ![Ether - Everforest Dark theme](https://i.postimg.cc/jjggsXtx/everforest-dark.jpg)
-
 Tokyo Night
 ![Ether - Tokyo Night theme](https://i.postimg.cc/zGNPpvxr/catppuccin.jpg)
-
 Dracula
 ![Ether - Dracula theme](https://i.postimg.cc/q7MDVYfD/dracula.jpg)
-
 Gruvbox Retro
 ![Ether - Gruvbox Retro theme](https://i.postimg.cc/bJZ6dtwQ/gruvbox.jpg)
-
 Eternal Arctic
 ![Ether - Eternal Arctic theme](https://i.postimg.cc/kgyYHCHt/nord.jpg)
-
 Vanta Black
 ![Ether - Vanta Black theme](https://i.postimg.cc/28hK4hFG/b-w.jpg)
-
 Frosted Glass
 ![Ether - Frosted Glass Theme](https://i.postimg.cc/HL7K1sy4/250704-16h38m32s-screenshot.png)
-
 Crimson Blue
 ![Ether - Crimson Blue Theme](https://i.postimg.cc/0y434Jby/250704-16h38m06s-screenshot.png)
-
 Decay Green
 ![Ether - Decay Green Theme](https://i.postimg.cc/2SyMTxjt/250704-16h37m43s-screenshot.png)
-
 Edge Runner
 ![Ether - Edge Runner Theme](https://i.postimg.cc/282g4tYv/250704-16h37m16s-screenshot.png)
-
 Graphite Mono
 ![Ether - Graphite Mono Theme](https://i.postimg.cc/rmWPn8vD/graphite-mono.png)
-
 Material Sakura
 ![Ether - Material Sakura Theme](https://i.postimg.cc/28zPLDsr/250704-16h36m52s-screenshot.png)
-
 One Dark
 ![Ether - One Dark Theme](https://i.postimg.cc/XNKRvJDs/250704-16h36m18s-screenshot.png)
-
 Synth Wave
 ![Ether - Synth Wave Theme](https://i.postimg.cc/nr1gSRQy/250704-16h35m44s-screenshot.png)
-
 Oxo Carbon
 ![Ether - Oxo Carbon Theme](https://i.postimg.cc/wjMYNG9r/250707-00h22m33s-screenshot.png)
-
 Obsidian Purple
 ![Ether - Obsidian Purple Theme](https://i.postimg.cc/zBCc3tpy/250704-16h39m40s-screenshot.png)
-
 Catppuccin Mocha
 ![Ether - Catppuccin Mocha Theme](https://i.postimg.cc/8kRYLzR3/mocha.png)
-
 Catppuccin Latte
 ![Ether - Catppuccin Latte Theme](https://i.postimg.cc/ZnSDXGSV/latte.png)
-
 Nordic Blue
 ![Ether - Nordic Blue Theme](https://i.postimg.cc/gjHBpgcd/nord.png)
-
 Rosé Pine
 ![Ether - Rosé Pine Theme](https://i.postimg.cc/TwrzG8cK/250707-00h22m51s-screenshot.png)
-
 Virtual Witches
 ![Ether - Virtual Witches Theme](https://i.postimg.cc/8PT04gwC/virtual.png)
-
 BlueSky
 ![Ether - BlueSky Theme](https://i.postimg.cc/BQWKfJRq/250705-20h41m52s-screenshot.png)
-
 <p id="after-images"></p>
-
 [🔼 Back to top](#ether---an-aesthetic-functional-startpage)
-
-
 ## Configuration Options
-
 - colors
 - links
 - keybinds
@@ -94,18 +60,12 @@ BlueSky
   - image position (if your image is cropped, this sets where the image crop happens)
 - search engine (google, ddg, + 1 custom search engine)
   - to enter a custom search engine, you need to find the query url for the search engine eg. for google it is https://www.google.com/search
-
 You can download your configuration as JSON if you want to store it somewhere.
-
 ![Ether settings - import json](https://i.postimg.cc/XYtzwZ8p/ether-settings.jpg)
-
 To quickly get you up to speed, there's an option to import json.
 The import json option allows you to import your settings piece-by-piece ( ie. importing only links and theme ) or all at once.
-
 ## Setting it up as your new tab page
-
 ### The recommended way
-
 ---
 
 Download the new tab override extension for your browser, and in your extension settings point it at https://lookingcoolonavespa.github.io/Ether/.

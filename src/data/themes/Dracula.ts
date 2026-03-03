@@ -11,7 +11,7 @@ export default {
     "panel opacity": 0.8,
   },
   image: {
-    image: `url(${import.meta.env.BASE_URL}samurai.jpg)`,
+    image: `samurai.jpg`,
     "position x": "50%",
     "position y": "50%",
   },

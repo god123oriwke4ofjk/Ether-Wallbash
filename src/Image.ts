@@ -13,7 +13,7 @@ const percentage = z.custom<`${number}%`>((val) => {
   return /^\d+%$/.test(val as string);
 }, "Not a valid percentage");
 const ImageStateSchema = z.object({
-  image: z.string(),
+  image: z.string().nullable(),
   "position x": percentage,
   "position y": percentage,
 });
@@ -23,13 +23,16 @@ export function getImage(): ImageState {
   const lsItem = localStorage.getItem(IMAGE_LS_KEY);
   if (lsItem) return JSON.parse(lsItem);
 
-  const imageState = THEMES.everforest_dark.image;
+  const imageState = THEMES['Everforest Dark'].image;
   localStorage.setItem(IMAGE_LS_KEY, JSON.stringify(imageState));
   return imageState;
 }
 
 export function setImage(imageState: ImageState) {
-  imageEl.style.setProperty("background-image", imageState.image);
+  imageEl.style.setProperty(
+    "background-image",
+    imageState.image ? `url(${import.meta.env.BASE_URL}${imageState.image})` : "none"
+  );
   imageEl.style.setProperty("background-position-x", imageState["position x"]);
   imageEl.style.setProperty("background-position-y", imageState["position y"]);
 }

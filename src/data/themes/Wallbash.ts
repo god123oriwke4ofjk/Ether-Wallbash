@@ -11,7 +11,7 @@ export default {
     "panel opacity": 0.9,
   },
   image: {
-    image: `ilya-kuvshinov-untitled-1.jpg`,
+    image: `cyberpunk.jpg`,
     "position x": "50%",
     "position y": "50%",
   },

@@ -11,7 +11,7 @@ export default {
     "panel opacity": 0.8,
   },
   image: {
-    image: `url(${import.meta.env.BASE_URL}gruvbox_image31.png)`,
+    image: `gruvbox_image31.png`,
     "position x": "30%",
     "position y": "50%",
   },

@@ -11,7 +11,7 @@ export default {
         "panel opacity": 0.3,
     },
     image: {
-        image: `url(${import.meta.env.BASE_URL}sky.gif)`,
+        image: `sky.gif`,
         "position x": "52%",
         "position y": "50%",
     },

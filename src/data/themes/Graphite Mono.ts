@@ -11,7 +11,7 @@ export default {
     "panel opacity": 0.5,
   },
   image: {
-    image: `url(${import.meta.env.BASE_URL}park-junkyu-tshirt1.jpg)`,
+    image: `park-junkyu-tshirt1.jpg`,
     "position x": "50%",
     "position y": "50%",
   },

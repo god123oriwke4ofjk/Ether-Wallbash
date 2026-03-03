@@ -11,7 +11,7 @@ export default {
     "panel opacity": 0.8,
   },
   image: {
-    image: `url(${import.meta.env.BASE_URL}nordic.png)`,
+    image: `nordic.png`,
     "position x": "35%",
     "position y": "50%",
   },

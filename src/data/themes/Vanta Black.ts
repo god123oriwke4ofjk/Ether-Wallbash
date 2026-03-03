@@ -11,7 +11,7 @@ export default {
     "panel opacity": 0.3,
   },
   image: {
-    image: `url(${import.meta.env.BASE_URL}akira-explosion.jpg)`,
+    image: `akira-explosion.jpg`,
     "position x": "52%",
     "position y": "50%",
   },

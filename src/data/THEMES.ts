@@ -1,20 +1,18 @@
-const themeModules = import.meta.glob('./themes/*.ts', { eager: true });
+import type { Theme } from '../Theme';
+import type { ImageState } from '../Image';
 
-const themes = Object.entries(themeModules).reduce((acc, [path, module]) => {
-  try {
-    const themeName = path.replace('./themes/', '').replace('.ts', '');
-    const themeData = (module as any).default;
-    if (!themeData || !themeData.theme || !themeData.image) {
-      console.warn(`[THEMES.ts] Invalid theme data for ${themeName}:`, themeData);
-      return acc;
-    }
-    acc[themeName] = themeData;
-    console.log(`[THEMES.ts] Loaded theme: ${themeName}`, themeData);
-    return acc;
-  } catch (error) {
-    console.error(`[THEMES.ts] Error processing theme at ${path}:`, error);
-    return acc;
-  }
-}, {} as Record<string, any>);
+export type ThemeConfig = {
+  theme: Theme;
+  image: ImageState;
+};
+
+const modules = import.meta.glob('./themes/*.ts', { eager: true }) as Record<string, { default: ThemeConfig }>;
+
+const themes: Record<string, ThemeConfig> = {};
+
+for (const path in modules) {
+  const name = path.replace('./themes/', '').replace('.ts', '');
+  themes[name] = modules[path].default;
+}
 
 export default themes;
