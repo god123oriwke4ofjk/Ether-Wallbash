@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "bg color": "#1a1b26",
+    "fg color": "#a9b1d6",
+    "main accent": "#7aa2f7",
+    "accent 1": "#bb9af7",
+    "accent 2": "#9ece6a",
+    "accent 3": "#f7768e",
+    "accent 4": "#e0af68",
+    "accent 5": "#7dcfff",
+    "panel opacity": 0.7
+  },
+  "image": {
+    "image": "wallhaven-5gz6l3.jpg",
+    "position x": "50%",
+    "position y": "50%"
+  }
+}
