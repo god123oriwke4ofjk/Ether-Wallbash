@@ -11,18 +11,12 @@ trap 'notify_error "Error on line $LINENO: $BASH_COMMAND"' ERR
 STATE_FILE="$HOME/.local/state/hyde/staterc"
 TARGET="/var/www/ether/dist/wallbash.js"
 
-if ! command -v notify-send >/dev/null 2>&1; then
-  echo "Error: notify-send (libnotify) is not installed." >&2
-  echo "Please install it with: sudo pacman -S libnotify" >&2
-  exit 1
-fi
-
 if [ ! -f "$STATE_FILE" ]; then
   notify_error "State file not found: $STATE_FILE"
 fi
 
 if [ ! -d "/var/www/ether/dist" ]; then
-  notify_error "/var/www/ether/dist does not exist.\nRun the main setup script first."
+  notify_error "/var/www/ether/dist does not exist."
 fi
 
 THEME=$(grep '^HYDE_THEME=' "$STATE_FILE" | head -n1 | sed 's/HYDE_THEME="//; s/"$//')
