@@ -6,17 +6,39 @@ import { getTheme, setTheme, Theme } from "./Theme";
 import { getImage, ImageState, setImage } from "./Image";
 import { getLinks, initLinkSectionKeybinds, setLinks } from "./Links";
 import { initSearchBar, getSearch, setSearch } from "./Search";
+import THEMES from "./data/THEMES";
 
 export type ThemeConfig = {
   theme: Theme;
   image: ImageState;
 };
 
-function init() {
-  const imageState = getImage();
-  setImage(imageState);
-  const theme = getTheme();
-  setTheme(theme);
+async function init() {
+  const lastThemeName = localStorage.getItem("lastThemeName") || "custom";
+
+  if (lastThemeName === "Wallbash") {
+    try {
+      const url = `${import.meta.env.BASE_URL}wallbash.js?t=${Date.now()}`;
+      const module = await import(url);
+      const data: ThemeConfig = module.default;
+      setTheme(data.theme);
+      setImage(data.image);
+    } catch {
+      const saved = THEMES["Wallbash"];
+      setTheme(saved.theme);
+      setImage(saved.image);
+    }
+  } else if (lastThemeName !== "custom" && lastThemeName in THEMES) {
+    const saved = THEMES[lastThemeName as keyof typeof THEMES];
+    setTheme(saved.theme);
+    setImage(saved.image);
+  } else {
+    const imageState = getImage();
+    setImage(imageState);
+    const theme = getTheme();
+    setTheme(theme);
+  }
+
   const links = getLinks();
   initLinkSectionKeybinds();
   setLinks(links);
@@ -29,8 +51,8 @@ function init() {
   initModal({
     links,
     keybinds,
-    theme,
-    imageState,
+    theme: getTheme(),
+    imageState: getImage(),
     search,
   });
 }
@@ -40,26 +62,23 @@ init();
 let currentWallbash: ThemeConfig | null = null;
 
 async function loadDynamicWallbash() {
-  // First, check if 'wallbash' is the active theme to avoid unnecessary fetches
-  const storedTheme = localStorage.getItem('theme');
-  if (!storedTheme || !storedTheme.includes('#1a1b26')) { // Replace '#1a1b26' with your wallbash unique color
-    return; // Skip if not wallbash
-  }
+  const lastThemeName = localStorage.getItem("lastThemeName");
+  if (lastThemeName !== "Wallbash") return;
 
   try {
-    const res = await fetch(`${import.meta.env.BASE_URL}wallbash.json`);
-    if (!res.ok) return; // Silently skip if file missing or error
-    const data: ThemeConfig = await res.json();
+    const url = `${import.meta.env.BASE_URL}wallbash.js?t=${Date.now()}`;
+    const module = await import(url);
+    const data: ThemeConfig = module.default;
+
     if (JSON.stringify(data) !== JSON.stringify(currentWallbash)) {
       setTheme(data.theme);
       setImage(data.image);
       currentWallbash = data;
-      location.reload(); // Reload only on actual change
     }
-  } catch (error) {
-    console.warn('Wallbash fetch failed:', error); // Log but don't crash
+  } catch (e) {
+    console.warn("wallbash.js fetch failed", e);
   }
 }
 
 loadDynamicWallbash();
-setInterval(loadDynamicWallbash, 5000); // Poll every 5s, but conditionally insidedd
+setInterval(loadDynamicWallbash, 1000);

@@ -28,34 +28,39 @@ export default function (
           const selectEl = document.querySelector(
             "#theme-settings select",
           ) as HTMLSelectElement;
-          selectEl.value = "custom";
 
           for (const key of Object.keys(THEMES)) {
-            const optionEl = DomRender.option({
-              text: key,
-              value: key,
-            });
-
+            const optionEl = DomRender.option({ text: key, value: key });
             selectEl.append(optionEl);
-
-            selectEl.addEventListener("change", () => {
-              const selectedTheme =
-                selectEl.value === "custom"
-                  ? {
-                      theme: getTheme(),
-                      image: getImage(),
-                    }
-                  : THEMES[selectEl.value as keyof typeof THEMES];
-              refreshTheme(selectedTheme.theme);
-              refreshImage(selectedTheme.image);
-              themeSection.state = selectedTheme.theme;
-              imageSection.state = selectedTheme.image;
-              themeSection.rerender();
-              imageSection.rerender();
-            });
           }
+
+          const lastThemeName = localStorage.getItem("lastThemeName") || "custom";
+          selectEl.value = lastThemeName;
+
+          selectEl.addEventListener("change", () => {
+            const name = selectEl.value;
+            localStorage.setItem("lastThemeName", name); 
+
+            const selectedTheme =
+              name === "custom"
+                ? { theme: getTheme(), image: getImage() }
+                : THEMES[name as keyof typeof THEMES];
+
+            refreshTheme(selectedTheme.theme);
+            refreshImage(selectedTheme.image);
+            themeSection.state = selectedTheme.theme;
+            imageSection.state = selectedTheme.image;
+            themeSection.rerender();
+            imageSection.rerender();
+          });
         },
-        rerender: () => {},
+        rerender: function () {
+          const selectEl = document.querySelector(
+            "#theme-settings select",
+          ) as HTMLSelectElement;
+          const lastThemeName = localStorage.getItem("lastThemeName") || "custom";
+          selectEl.value = lastThemeName;
+        },
       },
       new InputGroup({
         wrapperEl: document.querySelector(
@@ -66,6 +71,7 @@ export default function (
             "#theme-settings select",
           ) as HTMLSelectElement;
           selectEl.value = "custom";
+          localStorage.setItem("lastThemeName", "custom");
 
           const target = e.target as HTMLInputElement;
           const key = target.name as keyof Theme;
