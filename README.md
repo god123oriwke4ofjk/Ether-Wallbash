@@ -2,9 +2,12 @@
 Navigate to your favorite sites with just a keypress or start a search with the `Shift` key. To navigate to a site, hit the `Ctrl` key before typing the address.
 Tab through your links with either the `Tab` key or your arrow keys.
 It's not mobile friendly as it was designed for use on a laptop/desktop.
+
 [Live Demo](https://nksupermarket.github.io/Ether/)
 ## Pre-configured themes
+
 [🔽 Skip to configuration](#after-images)
+
 Swap out the colors or the image if they're not to your liking. Here are some pre-configured themes to get you started.
 Everforest Dark
 ![Ether - Everforest Dark theme](https://i.postimg.cc/jjggsXtx/everforest-dark.jpg)
@@ -51,7 +54,10 @@ Virtual Witches
 BlueSky
 ![Ether - BlueSky Theme](https://i.postimg.cc/BQWKfJRq/250705-20h41m52s-screenshot.png)
 <p id="after-images"></p>
-[🔼 Back to top](#ether---an-aesthetic-functional-startpage)
+
+[🔼 Back to top]
+
+(#ether---an-aesthetic-functional-startpage)
 ## Configuration Options
 - colors
 - links
@@ -74,127 +80,118 @@ Download the new tab override extension for your browser, and in your extension 
 
 [Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/)
 
-### For a creamier, buttery experience (proceed at your own risk)
+### Running Ether with HyDE dynamic themes
 
 ---
-This method introduces some known [privacy and security flaws](https://www.mdsec.co.uk/2020/04/abusing-firefox-in-enterprise-environments/). 
+This method allows Ether to dynamically follow your HyDE theme so it will update automatically whenever your theme changes.
 
-[For firefox users as that's the only browser I have experience with, sorry guys]
+It requires building Ether locally and serving it with nginx.
 
-1. **Getting the files**
+1. **Clone the repository**
 
-Download the code via the "<> Code" button and extract it somewhere
-or if you're comfortable with the terminal, you can run `gh repo clone lookingcoolonavespa/Ether`.
+```
+git clone https://github.com/lookingcoolonavespa/Ether.git
+cd Ether
+```
 
-Remember where you store it because we're going to come back to it later.
+2. **Install dependencies and build**
 
-If you want to build it yourself, the build command is `npm run build`.
+Run the setup script:
+```
+npm run setup
+```
+Then build the project:
+```
+npm run build
+```
+This will generate the compiled site inside a dist/ folder.
 
-2. **Setting up nginx**
+3. **Create a directory for nginx**
 
-   1. Install Nginx: If you haven't already, you'll need to install Nginx on your machine. You can do this using your package manager or by downloading the latest version from the Nginx website.
+create a directory Ether inside /var/www.
+```
+sudo mkdir -p /var/www/ether
+```
+Depending on your system configuration, nginx may need permission to read this directory
+commonly nginx runs as the http user on arch-based systems.
 
-   2. Serving your site: Next, you'll need to configure Nginx to serve your site files. Open the Nginx configuration file (usually located at /etc/nginx/nginx.conf if you're using linux) in a text editor, and add the following code inside the http block:
+you may need to change ownership:
+```
+sudo chown http:http /var/www/ether
+```
+afterwards move the built files:
+```
+sudo mv dist /var/www/ether/
+```
 
-   ```
-       server {
-           listen 8000;
-           root PATH_TO_THE_CODE/dist;
-           index index.html;
-       }
-   ```
+4. **Configure nginx**
 
-   This tells Nginx to listen on port 8000 and serve files from the "dist" folder of your code directory. The "dist" folder is where the build is located. The "index" directive tells Nginx to look for an index.html file by default when serving the site.
+Create an nginx server configuration that serves the Ether directory.
+/etc/nginx/sites-available/ether:
+```
+server {
 
-   3. Adding a cache: To give your server that coconut butter you want to add a cache. Add the following code:
+  listen 80;  # change to 8080 if you want non-root
 
-   ```
-        proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=my_cache:10m inactive=2d;
+  server_name localhost;  # or your IP/domain if remote access needed
 
-        server {
-            (code you copied from above)
 
-            location / {
-                # Enable caching for 10 days
-                expires 10d;
-                add_header Cache-Control public;
+  root /var/www/ether/dist; 
 
-                # Use the cache zone defined earlier
-                proxy_cache my_cache;
-                proxy_cache_valid 200 2d;
-                proxy_cache_bypass $http_pragma;
-                proxy_cache_revalidate on;
-                proxy_cache_min_uses 1;
-                proxy_cache_methods GET HEAD;
-                proxy_cache_key "$scheme$request_method$host$request_uri";
-            }
-        }
-   ```
+  index index.html;  
 
-   4. Start Nginx: Once you've configured Nginx, you can start it by running the following command:
 
-   `sudo systemctl start nginx`
+  location / {
 
-   This will start the Nginx service in the background.
+    try_files $uri $uri/ =404;  # Serve files, 404 on missing
 
-   Verify that your site is working: Open a web browser and navigate to http://localhost:8000. You should see your site's content.
+  }
 
-   That's it! You now have Nginx serving your site locally on your machine. You can stop the Nginx service by running sudo systemctl stop nginx, and you can restart it by running `sudo systemctl restart nginx`. If you need to make changes to your site files or Nginx configuration, you'll need to restart the Nginx service for the changes to take effect.
 
-   (written with help from ChatGPT)
+  gzip on;
 
-3. **Setting up your browser**
+  gzip_types text/plain text/css application/javascript image/*;
 
-   1. Create a file called local-settings.js.
+  gzip_vary on;
 
-   2. In this file, paste the following lines:
 
-   ```
-       // The file must begin with a comment
-       pref("general.config.filename", "mozilla.cfg");
-       pref("general.config.obscure_value", 0);
-       pref("general.config.sandbox_enabled", false);
+  location ~* \.(jpg|jpeg|png|gif|ico|css|js)$ {
 
-   ```
+    expires 30d;
 
-   3. Find your firefox directory and place local-settings.js in /YOUR_FIREFOX_DIR/default/pref/
+    add_header Cache-Control "public";
 
-   4. Create another file called mozilla.cfg and paste the following lines:
+  }
 
-   ```
+}
+```
 
-   // The file must begin with a comment
-   var {classes:Cc, interfaces:Ci, utils:Cu} = Components;
+You will also need to add 
+```
+include /etc/nginx/sites-enabled/*;
+```
+to /etc/nginx/nginx.conf, in the http{}, section
+and afterwards create a symlink
+```
+sudo ln -s /etc/nginx/sites-available/ether /etc/nginx/sites-enabled/
+```
 
-   /_ set new tab page _/
-   try {
-       Cu.import("resource:///modules/AboutNewTab.jsm");
-       var newTabURL = "http://localhost:8000";
-       AboutNewTab.newTabURL = newTabURL;
-   } catch(e){Cu.reportError(e);} // report errors in the Browser Console
+```
+sudo nginx -t && sudo systemctl restart nginx
+```
 
-    // Auto focus new tab content
-    try {
-        Cu.import("resource://gre/modules/Services.jsm"); /* if you're using firefox 117 or above remove this line */
-        Cu.import("resource:///modules/BrowserWindowTracker.jsm");
+5. **Enable HyDE wallbash theme integration
 
-        Services.obs.addObserver((event) => {
-            window = BrowserWindowTracker.getTopWindow();
-            window.gBrowser.selectedBrowser.focus();
-            }, "browser-open-newtab-start");
+to make ether follow your hyde theme dynamically
+create the file ~/.config/hyde/wallbash/theme/ether.dcol
+with the following contents:
+```
+/dev/null|${confDir}/hyde/wallbash/scripts/ether.sh
+```
 
-    } catch(e) { Cu.reportError(e); }
+afterwards from within the cloned repository
 
-   ```
+move the file ether.sh into ~/.config/hyde/wallbash/scripts/
 
-   5. Place this file in your firefox directory.
-
-There you go. Now you're set up for the creamy, smooth, velvety, super silky experience that you deserve.
-
-## Resources/Inspiration
-
-[Hero Patterns by Steve Schoger](www.heropatterns.com)
-
-[Fludity start page by PrettyCoffee](https://github.com/PrettyCoffee/fluidity/tree/main/src)
-
-[Startpage by voxie12](https://github.com/voxie12/voxie12.github.io)
+and finally select the Wallbash theme from within the site 
+Once selected, ether will dynamically update based on your HyDE theme
