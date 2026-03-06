@@ -81,7 +81,7 @@ It requires building Ether locally and serving it with nginx.
 
 ```
 git clone https://github.com/god123oriwke4ofjk/Ether-Wallbash
-cd Ether
+cd Ether-Wallbash
 ```
 
 2. **Install dependencies and build**
@@ -184,6 +184,31 @@ create the file ~/.config/hyde/wallbash/theme/ether.dcol with the following cont
 ```
 
 afterwards from within the cloned repository
+
+you will need to setup the ether themes inside you Hyde themes
+
+simply move each theme inside src/data/themes into a Hyde theme with a matching name in ~/.config/hyde/themes
+
+you can do this manually or use a simple script such as:
+
+```
+#!/bin/bash
+
+SRC="ts_files"
+DEST="target_folders"
+
+for file in "$SRC"/*.ts; do
+    name=$(basename "$file" .ts)
+    target="$DEST/$name"
+
+    if [ -d "$target" ]; then
+        mv "$file" "$target/"
+        echo "Moved $file -> $target/"
+    else
+        echo "Folder $target not found"
+    fi
+done
+```
 
 move the file ether.sh into ~/.config/hyde/wallbash/scripts/
 
