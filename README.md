@@ -55,9 +55,8 @@ BlueSky
 ![Ether - BlueSky Theme](https://i.postimg.cc/BQWKfJRq/250705-20h41m52s-screenshot.png)
 <p id="after-images"></p>
 
-[🔼 Back to top]
+[🔼 Back to top](#ether---an-aesthetic-functional-startpage)
 
-(#ether---an-aesthetic-functional-startpage)
 ## Configuration Options
 - colors
 - links
@@ -70,17 +69,8 @@ You can download your configuration as JSON if you want to store it somewhere.
 ![Ether settings - import json](https://i.postimg.cc/XYtzwZ8p/ether-settings.jpg)
 To quickly get you up to speed, there's an option to import json.
 The import json option allows you to import your settings piece-by-piece ( ie. importing only links and theme ) or all at once.
-## Setting it up as your new tab page
-### The recommended way
----
 
-Download the new tab override extension for your browser, and in your extension settings point it at https://lookingcoolonavespa.github.io/Ether/.
-
-[Chrome extension](https://chrome.google.com/webstore/detail/new-tab-redirect/icpgjfneehieebagbmdbhnlpiopdcmna)
-
-[Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/)
-
-### Running Ether with HyDE dynamic themes
+## Running Ether with HyDE
 
 ---
 This method allows Ether to dynamically follow your HyDE theme so it will update automatically whenever your theme changes.
@@ -108,11 +98,12 @@ This will generate the compiled site inside a dist/ folder.
 
 3. **Create a directory for nginx**
 
-create a directory Ether inside /var/www.
+create a directory ether inside /var/www.
 ```
 sudo mkdir -p /var/www/ether
 ```
 Depending on your system configuration, nginx may need permission to read this directory
+
 commonly nginx runs as the http user on arch-based systems.
 
 you may need to change ownership:
@@ -127,6 +118,7 @@ sudo mv dist /var/www/ether/
 4. **Configure nginx**
 
 Create an nginx server configuration that serves the Ether directory.
+
 /etc/nginx/sites-available/ether:
 ```
 server {
@@ -171,20 +163,22 @@ You will also need to add
 include /etc/nginx/sites-enabled/*;
 ```
 to /etc/nginx/nginx.conf, in the http{}, section
+
 and afterwards create a symlink
 ```
 sudo ln -s /etc/nginx/sites-available/ether /etc/nginx/sites-enabled/
 ```
+and restart nginx
 
 ```
 sudo nginx -t && sudo systemctl restart nginx
 ```
 
-5. **Enable HyDE wallbash theme integration
+5. **Enable HyDE wallbash theme integration**
 
 to make ether follow your hyde theme dynamically
-create the file ~/.config/hyde/wallbash/theme/ether.dcol
-with the following contents:
+
+create the file ~/.config/hyde/wallbash/theme/ether.dcol with the following contents:
 ```
 /dev/null|${confDir}/hyde/wallbash/scripts/ether.sh
 ```
@@ -193,5 +187,12 @@ afterwards from within the cloned repository
 
 move the file ether.sh into ~/.config/hyde/wallbash/scripts/
 
-and finally select the Wallbash theme from within the site 
+and finally, open localhost, go to settings, select the Wallbash theme 
+
 Once selected, ether will dynamically update based on your HyDE theme
+
+set it up as the default new tab with a new tab override extension:
+
+[Chrome extension](https://chrome.google.com/webstore/detail/new-tab-redirect/icpgjfneehieebagbmdbhnlpiopdcmna)
+
+[Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/)
