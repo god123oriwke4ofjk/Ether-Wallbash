@@ -80,7 +80,7 @@ It requires building Ether locally and serving it with nginx.
 1. **Clone the repository**
 
 ```
-git clone https://github.com/lookingcoolonavespa/Ether.git
+git clone https://github.com/god123oriwke4ofjk/Ether-Wallbash
 cd Ether
 ```
 
