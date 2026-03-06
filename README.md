@@ -194,8 +194,8 @@ you can do this manually or use a simple script such as:
 ```
 #!/bin/bash
 
-SRC="ts_files"
-DEST="target_folders"
+SRC="/path/to/your/Ether-Wallbash/src/data/themes"
+DEST="/home/$USER/.config/hyde/themes"
 
 for file in "$SRC"/*.ts; do
     name=$(basename "$file" .ts)
